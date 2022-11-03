@@ -1,0 +1,29 @@
+### Index Action
+GET http://localhost:3000/products
+
+
+### Show Action
+GET http://localhost:3000/products/4
+
+
+### Create Action
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name": "Test Product2",
+    "price": 40,
+    "image_url": "http://testurl.com",
+    "description": "a description of a test product"
+}
+
+### Update Action
+PATCH http://localhost:3000/products/8
+Content-Type: application/json
+
+{
+    "description": "We finally fixed the create, lets GO!!"
+}
+
+### Destroy Action
+DELETE http://localhost:3000/products/8
