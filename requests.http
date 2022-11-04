@@ -3,11 +3,11 @@ GET http://localhost:3000/products
 
 
 ### Show Action
-GET http://localhost:3000/products/4
+GET http://localhost:3000/products/4.json
 
 
 ### Create Action
-POST http://localhost:3000/products
+POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
@@ -18,7 +18,7 @@ Content-Type: application/json
 }
 
 ### Update Action
-PATCH http://localhost:3000/products/8
+PATCH http://localhost:3000/products/8.json
 Content-Type: application/json
 
 {
