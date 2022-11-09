@@ -6,6 +6,10 @@ class Product < ApplicationRecord
 
     def supplier
         Supplier.find_by(id: supplier_id)
+    end 
+
+    def images
+        Image.find_by(id: product.id)
     end
    
     def friendly_created_at
