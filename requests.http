@@ -1,5 +1,5 @@
 ### Index Action
-GET http://localhost:3000/products
+GET http://localhost:3000/products.json
 
 
 ### Show Action
@@ -10,20 +10,19 @@ GET http://localhost:3000/products/4.json
 POST http://localhost:3000/products.json
 Content-Type: application/json
 
-{
-    "name": "Test Product2",
-    "price": 40,
-    "image_url": "http://testurl.com"
-    "description": "a description of a test product"
+{   
+    "name": "Test",
+    "price": -2,
+    "image_url": "http://testurl.com",
+    "description": "12345678111"
 }
-
 ### Update Action
-PATCH http://localhost:3000/products/8.json
+PATCH http://localhost:3000/products/2.json
 Content-Type: application/json
 
 {
-    "description": "We finally fixed the create, lets GO!!"
+    "image_url": "https://media3.giphy.com/media/heIX5HfWgEYlW/giphy.gif?cid=ecf05e47w8779t30jwajwfq8hj38cpv1xfnzknyiy7kl3rrv&rid=giphy.gif&ct=g"
 }
 
 ### Destroy Action
-DELETE http://localhost:3000/products/8
+DELETE http://localhost:3000/products/12
