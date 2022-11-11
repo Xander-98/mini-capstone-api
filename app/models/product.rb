@@ -1,17 +1,10 @@
 class Product < ApplicationRecord
-
+    belongs_to :supplier
+    has_many :images
     validates :name, presence: true, uniqueness: true
     validates :price, presence:, numericality: { greater_than: 0}
     validates :description, presence: true, length: { minimum: 10, maximum: 500}
-
-    def supplier
-        Supplier.find_by(id: supplier_id)
-    end 
-
-    def images
-        Image.find_by(id: product.id)
-    end
-   
+    
     def friendly_created_at
         # created_at.strftime("%B %e, %Y")
     end

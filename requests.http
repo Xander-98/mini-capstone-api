@@ -13,15 +13,14 @@ Content-Type: application/json
 {   
     "name": "Test",
     "price": -2,
-    "image_url": "http://testurl.com",
     "description": "12345678111"
 }
 ### Update Action
-PATCH http://localhost:3000/products/2.json
+PATCH http://localhost:3000/products/4.json
 Content-Type: application/json
 
 {
-    "image_url": "https://media3.giphy.com/media/heIX5HfWgEYlW/giphy.gif?cid=ecf05e47w8779t30jwajwfq8hj38cpv1xfnzknyiy7kl3rrv&rid=giphy.gif&ct=g"
+    "url": "https://www.digitaltechnologylabs.com/wp-content/uploads/2019/06/01.jpg"
 }
 
 ### Destroy Action
