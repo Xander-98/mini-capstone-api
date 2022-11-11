@@ -1,9 +1,11 @@
 ### Index Action
 GET http://localhost:3000/products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgyMTkwMDB9.3zppz3_b_CcGTnLqw3P7OWfkcEekIT0LnpzohGGYu0U
 
 
 ### Show Action
 GET http://localhost:3000/products/4.json
+
 
 
 ### Create Action
@@ -26,6 +28,8 @@ Content-Type: application/json
 ### Destroy Action
 DELETE http://localhost:3000/products/12
 
+# ### Create Image (creates and assigns images to products?)
+# POST http://localhost:3000/
 
 
 ### Create Action (User Sign Up)
@@ -37,4 +41,14 @@ Content-Type: application/json
     "email": "kate@test.com",
     "password": "password",
     "password_confirmation": "password"
+}
+
+
+### Sessions Login Action
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+    "email": "Jaymealexander.12@gmail.com",
+    "password": "password123"
 }

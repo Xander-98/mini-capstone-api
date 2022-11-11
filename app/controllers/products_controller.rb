@@ -6,6 +6,7 @@ def show
 end
 
 def index
+    pp current_user
     @products = Product.all
     render template: "products/index"
 end
