@@ -1,3 +1,4 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njg0NTYzMDF9.mqMPl5-MKagKn5_GBIHxCeZ20mVrcik_mcjT4_--nmY
 ### Index Action
 GET http://localhost:3000/products.json
 
@@ -37,7 +38,7 @@ Content-Type: application/json
 
 {
     "name": "Jayme",
-    "email": "Jaymealexander.12@gmail.com",
+    "email": "Jaymealexander@gmail.com",
     "password": "password",
     "password_confirmation": "password"
 }
@@ -55,25 +56,19 @@ Content-Type: application/json
 ### Order Create
 POST http://localhost:3000/orders
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njg0NDM2NDd9.k5PsXCKCXr5kIKMXa8HaWZNcAtXtHDUBEwmhJyNhXuY
-
+Authorization: Bearer {{jwt}} 
 {
-    "user_id": 1,
-    "product_id": 11,
-    "quantity": 1,
-    "subtotal": 200.00,
-    "tax":     subtotal * 0.06,
-    "total":    subtotal + tax
+    "product_id": 4,
+    "quantity": 10
 }
 
 
 ### Order Show
 GET http://localhost:3000/orders/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njg0NDM2NDd9.k5PsXCKCXr5kIKMXa8HaWZNcAtXtHDUBEwmhJyNhXuY
-
+Authorization: Bearer {{jwt}}
 
 ### Order Index 
-GET http://localhost:3000/orders
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njg0NDM2NDd9.k5PsXCKCXr5kIKMXa8HaWZNcAtXtHDUBEwmhJyNhXuY
+GET http://localhost:3000/orders.json
+Authorization: Bearer {{jwt}}
 
 
