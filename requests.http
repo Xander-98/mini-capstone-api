@@ -1,6 +1,5 @@
 ### Index Action
 GET http://localhost:3000/products.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgyMTkwMDB9.3zppz3_b_CcGTnLqw3P7OWfkcEekIT0LnpzohGGYu0U
 
 
 ### Show Action
@@ -37,8 +36,8 @@ POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-    "name": "Kate",
-    "email": "kate@test.com",
+    "name": "Jayme",
+    "email": "Jaymealexander.12@gmail.com",
     "password": "password",
     "password_confirmation": "password"
 }
@@ -52,3 +51,29 @@ Content-Type: application/json
     "email": "Jaymealexander.12@gmail.com",
     "password": "password123"
 }
+
+### Order Create
+POST http://localhost:3000/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njg0NDM2NDd9.k5PsXCKCXr5kIKMXa8HaWZNcAtXtHDUBEwmhJyNhXuY
+
+{
+    "user_id": 1,
+    "product_id": 11,
+    "quantity": 1,
+    "subtotal": 200.00,
+    "tax":     subtotal * 0.06,
+    "total":    subtotal + tax
+}
+
+
+### Order Show
+GET http://localhost:3000/orders/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njg0NDM2NDd9.k5PsXCKCXr5kIKMXa8HaWZNcAtXtHDUBEwmhJyNhXuY
+
+
+### Order Index 
+GET http://localhost:3000/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njg0NDM2NDd9.k5PsXCKCXr5kIKMXa8HaWZNcAtXtHDUBEwmhJyNhXuY
+
+
