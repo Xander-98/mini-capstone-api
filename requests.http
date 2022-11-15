@@ -64,7 +64,7 @@ Authorization: Bearer {{jwt}}
 
 
 ### Order Show
-GET http://localhost:3000/orders/1
+GET http://localhost:3000/orders/1.json
 Authorization: Bearer {{jwt}}
 
 ### Order Index 

@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-before_action :authenticate_admin
 before_action :authenticate_user
     def create
         product = Product.find(params[:product_id])
@@ -15,24 +14,20 @@ before_action :authenticate_user
             total: total      
  )
        if @order.save
-        render template: "orders#show"
+        render template: "orders/show"
        else
         render json: {message: orders.errors.full_messages}, status: 422
+       end
     end
 
     def show
-        @order = Order.find(params["id"])
-        render template: "orders#show"
+        @order = current_user.orders.find_by(id: params[:id])
+        render template: "orders/show"
     end
 
     def index
-        if current_user
         @orders = current_user.orders
-        render template: "orders#index"
-        else
-            render json: [], status: :unauthorized
-        end
+        render template: "orders/index"
     end
-end
-end
 
+end
