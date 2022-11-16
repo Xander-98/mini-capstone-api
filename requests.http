@@ -72,3 +72,16 @@ GET http://localhost:3000/orders.json
 Authorization: Bearer {{jwt}}
 
 
+### Cart Create
+POST http://localhost:3000/carted.json
+Content-Type: application/json
+
+{
+    "product_id": 1,
+    "quantity": 2,
+    "user_id": 1,
+    "order_id": 1,
+    "status": "purchased"
+}
+
+

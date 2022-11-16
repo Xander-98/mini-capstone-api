@@ -26,3 +26,6 @@ class Product < ApplicationRecord
         total
     end
 end
+#create a carted_products controller with attributes product_id, quantity, user_id, order_id, status
+#lable relationships for new controller and old models, user/products has_many :carted_products
+# carted_products belongs_to :product :user
