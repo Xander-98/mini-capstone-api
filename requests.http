@@ -1,6 +1,6 @@
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njg0NTYzMDF9.mqMPl5-MKagKn5_GBIHxCeZ20mVrcik_mcjT4_--nmY
 ### Index Action
-GET http://localhost:3000/products.json
+GET http://localhost:3000/products.json?category==space
 
 
 ### Show Action
