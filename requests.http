@@ -1,10 +1,10 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njg0NTYzMDF9.mqMPl5-MKagKn5_GBIHxCeZ20mVrcik_mcjT4_--nmY
+@jwt =
 ### Index Action
-GET http://localhost:3000/products.json?category==space
+GET http://localhost:3000/products.json
 
 
 ### Show Action
-GET http://localhost:3000/products/4.json
+GET http://localhost:3000/products/2.json
 
 
 
@@ -13,20 +13,23 @@ POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {   
-    "name": "Test",
-    "price": -2,
-    "description": "12345678111"
+    "name": "Test.2",
+    "price": 2.00,
+    "description": "12345678111",
+    "inventory": 10,
+    "sale": false,
+    "supplier_id": 1
 }
 ### Update Action
-PATCH http://localhost:3000/products/4.json
+PATCH http://localhost:3000/products/2.json
 Content-Type: application/json
 
 {
-    "url": "https://www.digitaltechnologylabs.com/wp-content/uploads/2019/06/01.jpg"
+    "price": 3.00
 }
 
 ### Destroy Action
-DELETE http://localhost:3000/products/12
+DELETE http://localhost:3000/products/1
 
 # ### Create Image (creates and assigns images to products?)
 # POST http://localhost:3000/
@@ -49,8 +52,8 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-    "email": "Jaymealexander.12@gmail.com",
-    "password": "password123"
+    "email": "Jaymealexander@gmail.com",
+    "password": "password"
 }
 
 ### Order Create
@@ -58,8 +61,8 @@ POST http://localhost:3000/orders
 Content-Type: application/json
 Authorization: Bearer {{jwt}} 
 {
-    "product_id": 4,
-    "quantity": 10
+    "product_id": 2,
+    "quantity": 5
 }
 
 

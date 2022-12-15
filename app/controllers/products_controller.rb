@@ -1,58 +1,56 @@
 class ProductsController < ApplicationController
-    
-def show
-   @product = Product.find_by(id: params["id"])
+  def show
+    @product = Product.find_by(id: params["id"])
     render template: "products/show"
-end
+  end
 
-def index
+  def index
     @products = Product.all
 
     if params[:category]
-        category = Category.find_by(name: params[:category])
-        @products = category.products 
+      category = Category.find_by(name: params[:category])
+      @products = category.products
     end
-    
-    render template: "products/index"
-end
 
-def create
+    render template: "products/index"
+  end
+
+  def create
     product = Product.new(
-    name: params[:name],
-    price: params[:price],
-    url: params[:url],
-    description: params[:description]
+      name: params[:name],
+      price: params[:price],
+      description: params[:description],
+      inventory: params[:inventory],
+      sale: params[:sale],
+      supplier_id: params[:supplier_id],
     )
     if product.save
-    @product = product
-    render template: "products/show"
+      @product = product
+      render template: "products/show"
     else
-        render json: {errors: product.errors.full_messages}, status: :unprocessable_entity
+      render json: { errors: product.errors.full_messages }, status: :unprocessable_entity
     end
-end
+  end
 
-def update
+  def update
     product = Product.find_by(id: params["id"])
-    
+
     product.name = params[:name] || product.name
-    product.price= params[:price] || product.price
-    product.url= params[:url] || product.url
-    product.description= params[:description] || product.description
+    product.price = params[:price] || product.price
+    product.description = params[:description] || product.description
 
     if product.save
-    @product = product
-    render template: "products/show"
+      @product = product
+      render template: "products/show"
     else
-        render json: {errors: product.errors.full_messages}, status: unprocessable_entity
+      render json: { errors: product.errors.full_messages }, status: unprocessable_entity
     end
-end
+  end
 
-def destroy
+  def destroy
     product_id = params[:id]
     product = Product.find(product_id)
     product.destroy
-    render json: {message: "Product has been deleted!"}
+    render json: { message: "Product has been deleted!" }
+  end
 end
-
-end
-

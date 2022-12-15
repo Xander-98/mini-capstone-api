@@ -5,7 +5,6 @@
   description: @product.description,
   created_at: @product.created_at,
   updated_at: @product.updated_at,
-  images: @product.images,
   supplier: @product.supplier,
   categories: @product.categories,
   friendly_created_at: @product.friendly_created_at, 
